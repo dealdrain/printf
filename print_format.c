@@ -70,7 +70,7 @@ int _print_spec(char format, va_list args)
 
 	while (_types[x].specifier)
 	{
-		if (*_types[i].specifier == format)
+		if (*_types[x].specifier == format)
 			length = _types[x].f(args);
 
 		x++;
