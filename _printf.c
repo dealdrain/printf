@@ -8,6 +8,7 @@
  *
  * Return: number of chars that print
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
