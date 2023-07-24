@@ -8,6 +8,7 @@
   *
   * Return: The length of the character
   */
+
 int _print_a_char(va_list args)
 {
 	_write(va_arg(args, int));
@@ -16,24 +17,25 @@ int _print_a_char(va_list args)
 
 /**
   * _print_a_string - Prints a string
-  * @args: A list of variadic arguments
+  * @args: list of var arguments
   *
   * Return: The length of the string
   */
+
 int _print_a_string(va_list args)
 {
 	char *arg = va_arg(args, char *);
-	int i = 0;
+	int x = 0;
 
 	if (arg != NULL)
 	{
-		while (arg[i])
+		while (arg[x])
 		{
-			_write(arg[i]);
-			i++;
+			_write(arg[x]);
+			x++;
 		}
 
-		return (i);
+		return (x);
 	}
 
 	_write('(');
@@ -46,11 +48,12 @@ int _print_a_string(va_list args)
 }
 
 /**
-  * _print_a_integer - Prints a integer
-  * @args: A list of variadic arguments
+  * _print_a_integer - Print integer
+  * @args: list of variadic args
   *
   * Return: The length of the string
   */
+
 int _print_a_integer(va_list args)
 {
 	int count = 1, m = 0;
@@ -76,17 +79,18 @@ int _print_a_integer(va_list args)
 }
 
 /**
-  * _recursion_integer - Prints a integer
-  * @a: integer to print
+  * _recursion_integer - Print int
+  * @a: int to print
   *
   * Return: Nothing
   */
+
 void _recursion_integer(int a)
 {
-	unsigned int t;
+	unsigned int c;
 
-	t = a;
-	if (t / 10)
-		_recursion_integer(t / 10);
-	_write(t % 10 + '0');
+	c = a;
+	if (c / 10)
+		_recursion_integer(c / 10);
+	_write(c % 10 + '0');
 }
