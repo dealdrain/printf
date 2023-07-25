@@ -3,45 +3,46 @@
 #include <stdio.h>
 
 /**
-  * _print_int_binary - Prints a int converted to binary
-  * @args: A list of variadic arguments
-  *
-  * Return: The number of printed digits
+  * _print_int_binary - Print int to binary
+  * @args: list of args
+  * Return: printed int
   */
-int _print_int_binary(va_list args)
+int _printintbinary(va_list args)
 {
-	unsigned int x = 0;
-	int b = 0, new = 0;
+	unsigned int g = 0;
+	int e = 0;
+	int j = 0;
 
-	new = va_arg(args, int);
-	x = new;
-	if (new < 0)
+	j = va_arg(args, int);
+	g = j;
+	if (j < 0)
 	{
-		_write('1');
-		new = new * -1;
-		x = new;
-		b += 1;
+		_pwrite('1');
+		j = j * -1;
+		g = j;
+		e += 1;
 	}
-	while (x > 0)
+	while (g > 0)
 	{
-		x = x / 2;
-		b++;
+		g = g / 2;
+		e++;
 	}
-	_recursion_int_binary(new);
-	return (b);
+	_recursionintbinary(j);
+	return (e);
 }
 
 /**
-  * _recursion_int_binary - Prints a binary
-  * @a: integer to print
-  *
+  * _recursionintbinary - Print a binary
+  * @a: int
   */
-void _recursion_int_binary(int a)
+void _recursionintbinary(int a)
 {
-	unsigned int t;
+	unsigned int z;
 
-	t = a;
-	if (t / 2)
-		_recursion_int_binary(t / 2);
-	_write(t % 2 + '0');
+	z = a;
+	if (z / 2)
+
+		_recursionintbinary(z / 2);
+	
+	_pwrite(z % 2 + '0');
 }

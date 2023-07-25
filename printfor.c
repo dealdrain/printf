@@ -8,7 +8,7 @@
   *
   * Return: The length of the format
   */
-int _print_format(const char *format, va_list args)
+int _printfor(const char *format, va_list args)
 {
 	int count = 0;
 	int x = 0;
@@ -26,7 +26,7 @@ int _print_format(const char *format, va_list args)
 				x++;
 
 			if (format[x] == '%')
-				count += _write(format[x]);
+				count += _pwrite(format[x]);
 
 			if (_validate_char(format[x]) == 0)
 			{
@@ -34,12 +34,12 @@ int _print_format(const char *format, va_list args)
 			}
 			else
 			{
-				count += _print_spec(format[x], args);
+				count += _printspec(format[x], args);
 			}
 		}
 		else
 		{
-			count += _write(format[x]);
+			count += _pwrite(format[x]);
 		}
 
 		x++;
@@ -56,15 +56,15 @@ int _print_format(const char *format, va_list args)
   * Return: length of the specifier
   */
 
-int _print_spec(char format, va_list args)
+int _printspec(char format, va_list args)
 {
 	int x  = 0, length = 0;
 	ald _types[] = {
-		{"c", _print_a_char},
-		{"s", _print_a_string},
-		{"d", _print_a_integer},
-		{"i", _print_a_integer},
-		{"b", _print_int_binary},
+		{"c", _printchar},
+		{"s", _printstring},
+		{"d", _printint},
+		{"i", _printint},
+		{"b", _printintbinary},
 		{NULL, NULL}
 	};
 
@@ -90,16 +90,16 @@ int _print_spec(char format, va_list args)
 
 int _print_invalid_spec(char prev_format, char format, int count)
 {
-	count += _write('%');
+	count += _pwrite('%');
 
 	if (prev_format == ' ')
 	{
-		count += _write(' ');
-		count += _write(format);
+		count += _pwrite(' ');
+		count += _pwrite(format);
 	}
 	else
 	{
-		count += _write(format);
+		count += _pwrite(format);
 	}
 
 	return (count);

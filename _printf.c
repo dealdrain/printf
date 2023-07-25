@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	x = _print_format(format, args);
+	x = _printfor(format, args);
 
 	va_end(args);
 
