@@ -18,7 +18,7 @@ typedef struct sp
 int _printf(const char *format, ...);
 int _printchar(va_list args);
 int _pwrite(char k);
-int _printstring(va_list args);
+int _printstr(va_list args);
 int _printint(va_list args);
 void _recursionint(int a);
 int _printintbinary(va_list args);

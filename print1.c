@@ -46,12 +46,12 @@ int _printchar(va_list args)
 }
 
 /**
-  * _printstring - Print a str
+  * _printstr- Print a str
   * @args: args list
   * Return: str len
   */
 
-int _printstring(va_list args)
+int _printstr(va_list args)
 {
 	char *arg = va_arg(args, char *);
 	int x = 0;

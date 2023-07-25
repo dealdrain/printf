@@ -108,7 +108,7 @@ int _printspec(char format, va_list args)
 	int x  = 0, length = 0;
 	ald _types[] = {
 		{"c", _printchar},
-		{"s", _printstring},
+		{"s", _printstr},
 		{"d", _printint},
 		{"i", _printint},
 		{"b", _printintbinary},
