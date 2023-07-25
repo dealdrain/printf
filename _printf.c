@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int x;
+
 	x = 0;
 
 	if (format == NULL)
@@ -21,7 +22,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	x = _print_format(format, args);
+
 	va_end(args);
-	
+
 	return (x);
 }
