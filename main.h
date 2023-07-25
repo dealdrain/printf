@@ -4,13 +4,13 @@
 
 /**
   * struct specifiers - Struct .......
-  * @specifier: conversion spec
+  * @sp: conversion spec
   * @fp: function ptr
   */
 
-typedef struct specifiers
+typedef struct sp
 {
-	char *specifier;
+	char *sp;
 	int (*fp)(va_list args);
 } ald;
 

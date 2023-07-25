@@ -115,9 +115,9 @@ int _printspec(char format, va_list args)
 		{NULL, NULL}
 	};
 
-	while (_types[x].specifier)
+	while (_types[x].sp)
 	{
-		if (*_types[x].specifier == format)
+		if (*_types[x].sp == format)
 			length = _types[x].fp(args);
 
 		x++;
