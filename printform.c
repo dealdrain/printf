@@ -69,29 +69,28 @@ int _printform(const char *form, va_list args)
 }
 
 /**
-  * _printinvalidspec - Print invalid specifier
-  * @prev_format: The prev specifier
+  * _printinvalidspec - Prints an invalid spec.
+  * @old_form: old specifier
   * @format: specifier to print
-  * @count: current count before print- invalid specifiers
-  *
+  * @n: new count pre print
   * Return: current count after prints- invalid specifiers
   */
 
-int _printinvalidspec(char prev_format, char format, int count)
+int _printinvalidspec(char old_form, char format, int n)
 {
-	count += _pwrite('%');
+	n += _pwrite('%');
 
-	if (prev_format == ' ')
+	if (old_form == ' ')
 	{
-		count += _pwrite(' ');
-		count += _pwrite(format);
+		n += _pwrite(' ');
+		n += _pwrite(format);
 	}
 	else
 	{
-		count += _pwrite(format);
+		n += _pwrite(format);
 	}
 
-	return (count);
+	return (n);
 }
 
 /**

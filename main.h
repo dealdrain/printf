@@ -26,7 +26,7 @@ int _printintbinary(va_list args);
 int _printspec(char format, va_list args);
 void _recursionintbinary(int l);
 int _printform(const char *form, va_list args);
-int _printinvalidspec(char prev_format, char format, int count);
+int _printinvalidspec(char old_form, char format, int n);
 int _validatechar(char meth);
 
 #endif
