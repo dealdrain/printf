@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
-  * _validate_char - type validation
+  * _validatechar - type validation
   * @_type: char
   *
   * Return: 1 if char is equal to a type
   */
 
-int _validate_char(char _type)
+int _validatechar(char _type)
 {
 	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
 	int p = 0;
@@ -49,9 +49,9 @@ int _printfor(const char *format, va_list args)
 			if (format[x] == '%')
 				count += _pwrite(format[x]);
 
-			if (_validate_char(format[x]) == 0)
+			if (_validatechar(format[x]) == 0)
 			{
-				count = _print_invalid_spec(format[x - 1], format[x], count);
+				count = _printinvalidspec(format[x - 1], format[x], count);
 			}
 			else
 			{
@@ -70,7 +70,7 @@ int _printfor(const char *format, va_list args)
 }
 
 /**
-  * _print_invalid_spec - Print invalid specifier
+  * _printinvalidspec - Print invalid specifier
   * @prev_format: The prev specifier
   * @format: specifier to print
   * @count: current count before print- invalid specifiers
@@ -78,7 +78,7 @@ int _printfor(const char *format, va_list args)
   * Return: current count after prints- invalid specifiers
   */
 
-int _print_invalid_spec(char prev_format, char format, int count)
+int _printinvalidspec(char prev_format, char format, int count)
 {
 	count += _pwrite('%');
 
