@@ -23,50 +23,49 @@ int _validatechar(char meth)
 }
 
 /**
-  * _printfor - Prints a format
-  * @format: The format to prints
-  * @args: A list of variadic arguments
-  *
-  * Return: The length of the format
+  * _printform - Prints a format
+  * @form: format to print
+  * @args: var args
+  * Return: form len
   */
-int _printfor(const char *format, va_list args)
+int _printform(const char *form, va_list args)
 {
-	int count = 0;
+	int yes = 0;
 	int x = 0;
 
-	while (format && format[x])
+	while (form && form[x])
 	{
-		if (format[x] == '%')
+		if (form[x] == '%')
 		{
-			if (format[x + 1] == '\0')
+			if (form[x + 1] == '\0')
 				return (-1);
 
 			x++;
 
-			while (format[x] == ' ')
+			while (form[x] == ' ')
 				x++;
 
-			if (format[x] == '%')
-				count += _pwrite(format[x]);
+			if (form[x] == '%')
+				yes += _pwrite(form[x]);
 
-			if (_validatechar(format[x]) == 0)
+			if (_validatechar(form[x]) == 0)
 			{
-				count = _printinvalidspec(format[x - 1], format[x], count);
+				yes = _printinvalidspec(form[x - 1], form[x], yes);
 			}
 			else
 			{
-				count += _printspec(format[x], args);
+				yes += _printspec(form[x], args);
 			}
 		}
 		else
 		{
-			count += _pwrite(format[x]);
+			yes += _pwrite(form[x]);
 		}
 
 		x++;
 	}
 
-	return (count);
+	return (yes);
 }
 
 /**
