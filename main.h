@@ -21,6 +21,7 @@ int _pwrite(char k);
 int _printstr(va_list args);
 int _printint(va_list args);
 void _recursionint(int a);
+char *convert(unsigned long int number, int ib, int lcase);
 int _printintbinary(va_list args);
 int _printspec(char format, va_list args);
 void _recursionintbinary(int l);
