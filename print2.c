@@ -23,13 +23,13 @@ void _recursionint(int a)
 
 /**
   * _recursionintbinary - Print a binary
-  * @a: int
+  * @l: int
   */
-void _recursionintbinary(int a)
+void _recursionintbinary(int l)
 {
 	unsigned int z;
 
-	z = a;
+	z = l;
 	if (z / 2)
 
 		_recursionintbinary(z / 2);

@@ -23,7 +23,7 @@ int _printint(va_list args);
 void _recursionint(int a);
 int _printintbinary(va_list args);
 int _printspec(char format, va_list args);
-void _recursionintbinary(int a);
+void _recursionintbinary(int l);
 int _printfor(const char *format, va_list args);
 int _print_invalid_spec(char prev_format, char format, int count);
 int _validate_char(char _type);
