@@ -3,6 +3,40 @@
 #include <stdio.h>
 
 /**
+  * _recursionint - Print int
+  * @a: int to print
+  *
+  * Return: Nothing
+  */
+
+void _recursionint(int a)
+{
+	unsigned int uc;
+
+	uc = a;
+	if (uc / 10)
+		_recursionint(uc / 10);
+	_pwrite(uc % 10 + '0');
+}
+
+
+/**
+  * _recursionintbinary - Print a binary
+  * @a: int
+  */
+void _recursionintbinary(int a)
+{
+	unsigned int z;
+
+	z = a;
+	if (z / 2)
+
+		_recursionintbinary(z / 2);
+
+	_pwrite(z % 2 + '0');
+}
+
+/**
   * _printintbinary - Print int to binary
   * @args: list of args
   * Return: printed int
@@ -29,20 +63,4 @@ int _printintbinary(va_list args)
 	}
 	_recursionintbinary(j);
 	return (e);
-}
-
-/**
-  * _recursionintbinary - Print a binary
-  * @a: int
-  */
-void _recursionintbinary(int a)
-{
-	unsigned int z;
-
-	z = a;
-	if (z / 2)
-
-		_recursionintbinary(z / 2);
-
-	_pwrite(z % 2 + '0');
 }
