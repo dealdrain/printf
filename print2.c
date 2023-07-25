@@ -5,16 +5,17 @@
 
 /**
   * _recursionint - Print int
-  * @a: int to print
+  * @e: int to print
   *
   * Return: Nothing
   */
 
-void _recursionint(int a)
+void _recursionint(int e)
 {
 	unsigned int uc;
 
-	uc = a;
+	uc = e;
+
 	if (uc / 10)
 		_recursionint(uc / 10);
 	_pwrite(uc % 10 + '0');

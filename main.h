@@ -20,7 +20,7 @@ int _printchar(va_list args);
 int _pwrite(char k);
 int _printstr(va_list args);
 int _printint(va_list args);
-void _recursionint(int a);
+void _recursionint(int e);
 char *convert(unsigned long int number, int ib, int lcase);
 int _printintbinary(va_list args);
 int _printspec(char format, va_list args);
