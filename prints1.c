@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
-  * _print_int_binary - Print int to binary
+  * _printintbinary - Print int to binary
   * @args: list of args
   * Return: printed int
   */
@@ -43,6 +43,6 @@ void _recursionintbinary(int a)
 	if (z / 2)
 
 		_recursionintbinary(z / 2);
-	
+
 	_pwrite(z % 2 + '0');
 }
