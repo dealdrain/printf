@@ -2,6 +2,27 @@
 #include <stdlib.h>
 
 /**
+  * _validate_char - type validation
+  * @_type: char
+  *
+  * Return: 1 if char is equal to a type
+  */
+
+int _validate_char(char _type)
+{
+	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
+	int p = 0;
+
+	while (_types[p])
+	{
+		if (_types[p] == _type)
+			return (1);
+		p++;
+	}
+	return (0);
+}
+
+/**
   * _printfor - Prints a format
   * @format: The format to prints
   * @args: A list of variadic arguments
@@ -49,6 +70,32 @@ int _printfor(const char *format, va_list args)
 }
 
 /**
+  * _print_invalid_spec - Print invalid specifier
+  * @prev_format: The prev specifier
+  * @format: specifier to print
+  * @count: current count before print- invalid specifiers
+  *
+  * Return: current count after prints- invalid specifiers
+  */
+
+int _print_invalid_spec(char prev_format, char format, int count)
+{
+	count += _pwrite('%');
+
+	if (prev_format == ' ')
+	{
+		count += _pwrite(' ');
+		count += _pwrite(format);
+	}
+	else
+	{
+		count += _pwrite(format);
+	}
+
+	return (count);
+}
+
+/**
   * _printspec - Print specifier
   * @format: specifier to print
   * @args: list of vari args
@@ -77,51 +124,4 @@ int _printspec(char format, va_list args)
 	}
 
 	return (length);
-}
-
-/**
-  * _print_invalid_spec - Print invalid specifier
-  * @prev_format: The prev specifier
-  * @format: specifier to print
-  * @count: current count before print- invalid specifiers
-  *
-  * Return: current count after prints- invalid specifiers
-  */
-
-int _print_invalid_spec(char prev_format, char format, int count)
-{
-	count += _pwrite('%');
-
-	if (prev_format == ' ')
-	{
-		count += _pwrite(' ');
-		count += _pwrite(format);
-	}
-	else
-	{
-		count += _pwrite(format);
-	}
-
-	return (count);
-}
-
-/**
-  * _validate_char - type validation
-  * @_type: char
-  *
-  * Return: 1 if char is equal to a type
-  */
-
-int _validate_char(char _type)
-{
-	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
-	int p = 0;
-
-	while (_types[p])
-	{
-		if (_types[p] == _type)
-			return (1);
-		p++;
-	}
-	return (0);
 }
