@@ -59,7 +59,7 @@ int _print_format(const char *format, va_list args)
 int _print_spec(char format, va_list args)
 {
 	int x  = 0, length = 0;
-	spc_dt _types[] = {
+	ald _types[] = {
 		{"c", _print_a_char},
 		{"s", _print_a_string},
 		{"d", _print_a_integer},
@@ -71,7 +71,7 @@ int _print_spec(char format, va_list args)
 	while (_types[x].specifier)
 	{
 		if (*_types[x].specifier == format)
-			length = _types[x].f(args);
+			length = _types[x].fp(args);
 
 		x++;
 	}

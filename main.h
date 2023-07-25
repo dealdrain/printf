@@ -3,16 +3,16 @@
 #include <stdarg.h>
 
 /**
-  * struct specifiers - Struct specifiers
-  * @specifier: conversion specifier
-  * @f: function pointer
+  * struct specifiers - Struct .......
+  * @specifier: conversion spec
+  * @fp: function ptr
   */
 
 typedef struct specifiers
 {
 	char *specifier;
-	int (*f)(va_list args);
-} spc_dt;
+	int (*fp)(va_list args);
+} ald;
 
 
 int _write(char c);
@@ -28,4 +28,4 @@ int _print_int_binary(va_list args);
 void _recursion_int_binary(int a);
 int _validate_char(char _type);
 
-#endif /* MAIN */
+#endif
