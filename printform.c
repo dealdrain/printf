@@ -3,19 +3,19 @@
 
 /**
   * _validatechar - type validation
-  * @_type: char
+  * @meth: char
   *
   * Return: 1 if char is equal to a type
   */
 
-int _validatechar(char _type)
+int _validatechar(char meth)
 {
 	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
 	int p = 0;
 
 	while (_types[p])
 	{
-		if (_types[p] == _type)
+		if (_types[p] == meth)
 			return (1);
 		p++;
 	}
