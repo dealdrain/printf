@@ -10,12 +10,12 @@
 
 int _validatechar(char meth)
 {
-	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
+	char ex[] = {'c', 's', 'd', 'i', 'b', '%'};
 	int p = 0;
 
-	while (_types[p])
+	while (ex[p])
 	{
-		if (_types[p] == meth)
+		if (ex[p] == meth)
 			return (1);
 		p++;
 	}
@@ -97,29 +97,30 @@ int _printinvalidspec(char old_form, char format, int n)
   * _printspec - Print specifier
   * @format: specifier to print
   * @args: list of vari args
-  *
-  * Return: length of the specifier
+  * Return: specifier len
   */
 
 int _printspec(char format, va_list args)
 {
-	int x  = 0, length = 0;
-	ald _types[] = {
+	int x  = 0;
+	int len = 0;
+
+	ald ex[] = {
 		{"c", _printchar},
-		{"s", _printstr},
 		{"d", _printint},
+		{"s", _printstr},
 		{"i", _printint},
 		{"b", _printintbinary},
 		{NULL, NULL}
 	};
 
-	while (_types[x].sp)
+	while (ex[x].sp)
 	{
-		if (*_types[x].sp == format)
-			length = _types[x].fp(args);
+		if (*ex[x].sp == format)
+			len = ex[x].fp(args);
 
 		x++;
 	}
 
-	return (length);
+	return (len);
 }
