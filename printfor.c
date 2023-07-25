@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-  * _print_format - Prints a format
+  * _printfor - Prints a format
   * @format: The format to prints
   * @args: A list of variadic arguments
   *
@@ -49,7 +49,7 @@ int _printfor(const char *format, va_list args)
 }
 
 /**
-  * _print_spec - Print specifier
+  * _printspec - Print specifier
   * @format: specifier to print
   * @args: list of vari args
   *
